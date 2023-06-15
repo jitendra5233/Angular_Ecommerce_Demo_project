@@ -1,0 +1,72 @@
+
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+    
+       
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>blog details</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+       
+    <!-- Blog Section Start-->
+    <div class="blog-section section bg-gray pt-100 pb-60">
+        <div class="container">
+            <div class="row flex-row-reverse">
+                
+                <!-- Blog Wrapper -->
+                <div class="col-lg-12 col-12 mb-60">
+                    <div class="row">
+
+                        <div class="col-12">
+                           
+                            <!-- Blog Item Start-->
+                            <div class="blog-item">
+
+                                <!-- Image -->
+                                <div class="img"><img [src]="ds.baseurl + '/BlogImg/' + singleBlog.image" alt="blog"></div>
+
+                                <!-- Content -->
+                                <div class="content fix">
+
+                                    <!-- Publish Date -->
+                                    <span class="publish"><span>Published on:</span>{{singleBlog.fdate}}</span>
+
+                                    <!-- Title -->
+                                    <h4 class="title">{{singleBlog.title}}</h4>
+
+                                    <!-- Decs -->
+                                    <div class="blog-post" [innerHtml]="singleBlog.postContent"></div>
+
+                                </div>
+
+                            </div><!-- Blog Item End-->
+                            
+                            
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+                
+             
+            
+            </div>
+        </div>
+    </div><!-- Blog Section End-->
+    
+
+    
+
+</div><!-- Main Wrapper End -->
+

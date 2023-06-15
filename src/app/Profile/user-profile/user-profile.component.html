@@ -1,0 +1,76 @@
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+    
+    
+    
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>User Profile</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+  
+    <!-- Checkout Section Start-->
+    <div class="cart-section section pt-120 pb-90">
+        <div class="container">
+            <div class="row">
+               <div class="col-lg-3"></div>
+                <div class="col-lg-6 col-12 mb-30">
+                   
+                    <!-- Checkout Accordion Start -->
+                    <div id="checkout-accordion" class="panel-group">
+                       
+                        <!-- Checkout Method -->
+                        <div class="panel single-accordion">
+                         
+                            <mat-tab-group dynamicHeight>
+                                <mat-tab label="Edit Profile">
+                                    <form action="#" class="checkout-login-form">
+                                        <div class="row">
+                                            <div class="mb-3 mt-5">
+                                                <input type="text" class="form-control" name="username"  placeholder="Enter Name"  [(ngModel)]="username" >
+                                            </div>
+                                            <div class="mb-3">
+                                            <input type="email" name="useremail" class="form-control" placeholder="Enter Email-Id" [(ngModel)]="useremail">
+                                        </div>
+                                            <button type="button" class="btn btn-success" (click)="UpdateProfile()">Update Profile</button>
+                                        </div>
+                                    </form>
+                                </mat-tab>
+                            
+                            
+                              </mat-tab-group>
+                           
+
+                        </div>
+                        
+                       
+                        
+                
+                        
+                    </div><!-- Checkout Accordion Start -->
+                    
+                </div>
+                <div class="col-lg-3"></div>
+                <!-- Order Details -->
+             
+                
+            </div>
+        </div>
+    </div><!-- Checkout Section End-->
+`
+       
+   
+    
+
+</div><!-- Main Wrapper End -->
+

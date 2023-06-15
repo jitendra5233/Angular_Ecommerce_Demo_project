@@ -1,0 +1,106 @@
+
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+    
+
+       
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>shop page</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+       
+    <!-- Product Section Start-->
+    <div class="product-section section pt-120 pb-120">
+        <div class="container">
+            
+            <!-- Product Wrapper Start-->
+            <div class="row">
+                
+                <!-- Product Start-->
+                
+                <div class="col-lg-4 col-md-6 col-12 mb-60" *ngFor="let product of getPaginatedItems()">
+               
+                    <div class="product">
+    
+                        <!-- Image Wrapper -->
+                        <div class="image">
+                            <!-- Image -->
+                            <a routerLink="/product-details" class="img"><img img
+                                style="height: 350px"
+                                [src]="ds.baseurl + '/ProductImage/' + product.image"
+                                alt="Product"
+                            /> </a>
+                            <!-- Wishlist -->
+                           
+                            <a class="wishlist {{product.wishlist}}" (click)="AddRemoveWishlist(product.id)" style="cursor: pointer;"><i class="fa fa-heart-o"></i></a>
+                            <!-- Label -->
+                            <!-- <span class="label">New</span> -->
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="content">
+                            
+                            <!-- Head Content -->
+                            <div class="head fix">
+                               
+                                <!-- Title & Category -->
+                                <div class="title-category float-left">
+                                    <h5 class="title"><a [routerLink]="'/product-details/'+product.id">{{product.name}}</a></h5>
+                                    <a href="shop.html" class="category">Catalog</a>
+                                </div>
+                                <!-- Price -->
+                                <div class="price float-right">
+                                    <span class="new">₹{{product.price}}</span>
+                                    <!-- Old Price Mockup If Need -->
+                                    <!-- <span class="old">$46</span> -->
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Action Button -->
+                            <div class="action-button fix">
+                                <a [routerLink]="'/product-details/'+product.id">add to cart</a>
+                            </div>
+                            
+                        </div>
+    
+                    </div>
+                    
+                <!-- Product End-->
+              </div><!-- Product End-->
+                
+                
+                
+                <!-- Pagination Start -->
+            <div class="pagination-container">
+                <!-- Previous page button -->
+                <button (click)="previousPage()" [disabled]="currentPage === 1" class="pagination-button">Previous</button>
+                
+                <!-- Display the current page and total number of pages -->
+                <span class="pagination-info">Page {{ currentPage }} of {{ totalPages() }}</span>
+                
+                <!-- Next page button -->
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages()" class="pagination-button">Next</button>
+              </div><!-- Pagination End -->
+                
+            </div><!-- Product Wrapper End-->
+            
+        </div>
+    </div><!-- Product Section End-->
+
+    
+
+</div><!-- Main Wrapper End -->
+
+

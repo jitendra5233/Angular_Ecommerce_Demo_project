@@ -1,0 +1,89 @@
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+    
+    
+    
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>Checkout</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+   
+    
+    <!-- Checkout Section Start-->
+    <div class="cart-section section pt-120 pb-90">
+        <div class="container">
+            <div class="row">
+               
+                <div class="col-lg-6 col-12 mb-30">
+                    <p class="heading2"><strong>Payment Details</strong></p>
+                        <div class="form-group">
+                          <input type="text" class="loginIpt form-control" [(ngModel)]="cardHolderName" placeholder="Name" >
+                          <p *ngIf="cardHolderNameErr" class="errorTxt">Card Holder Name is Required *</p>
+                        </div>
+
+                        <div class="form-group">
+                            <input  type="text" class="loginIpt form-control" placeholder="Card Number" [(ngModel)]="cardNo" maxlength="16"  >
+                            <p *ngIf="cardNoErr" class="errorTxt">Card Number is Required*</p>
+                            <p *ngIf="cardNoErr2" class="errorTxt">Number should be 16 digits only*</p>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="loginIpt form-control"  [(ngModel)]="exMonth" placeholder="mm" maxlength="2"  >
+                            <p *ngIf="exMonthErr" class="errorTxt">Expiry Month is Required*</p>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" [(ngModel)]="exYear" class="loginIpt form-control" placeholder=" yyyy" maxlength="4"  >
+                            <p *ngIf="exYearErr" class="errorTxt">Expiry Year Required*</p>
+                          </div>
+
+                          <div class="form-group">
+                            <input type="text" [(ngModel)]="cvv" class="loginIpt form-control" placeholder="CVV" maxlength="3"  >
+                            <p *ngIf="cvvErr" class="errorTxt">CVV Number is Required*</p>
+                          </div>
+                    
+                  
+                  </div>
+                  
+                
+                <!-- Order Details -->
+                <div class="col-lg-6 col-6 mb-30">
+                   
+                    <div class="order-details-wrapper">
+                        <h2>your order</h2>
+                        <div class="order-details">
+                            <form>
+                                <ul>
+                                    <li><p class="strong">product</p><p class="strong">total</p></li>
+                                    <li *ngFor="let i of getAllCartProduct"><p>{{i.productName}} x {{i.proQuantity}}</p><p>₹{{i.SigleTotal}}</p></li>
+                                    <li><p class="strong">cart subtotal</p><p class="strong">₹{{total}}</p></li>
+                                    <li><p class="strong">order total</p><p class="strong">₹{{total}}</p></li>
+                                    <li><button (click)="handlePayment(total)" class="btn btn-primary btn-block button">Pay ₹{{total}}</button></li>
+                                    
+
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div><!-- Checkout Section End-->
+
+    <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+    
+
+</div><!-- Main Wrapper End -->
+

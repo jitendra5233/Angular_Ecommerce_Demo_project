@@ -1,0 +1,142 @@
+<!-- Header Section Start -->
+<div class="header-section section">
+    
+    <!-- Header Top Start -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <!-- Header Top Wrapper Start -->
+                    <div class="header-top-wrapper">
+                        <div class="row">
+
+                            <!-- Header Social -->
+                            <div class="header-social col-md-4 col-12">
+                                <ul style="display: flex;">
+                                    <li *ngFor="let i of GetSettingData.ameneties" style="padding: 10px 16px 0px 16px;">
+                                        <a [href]="i.text" target="_blank"
+                                          ><i [class]="i.icon + ' fa-fw fa-solid'"></i
+                                        ></a>
+                                      </li>
+                                </ul>
+                               
+                            </div>
+
+                            <!-- Header Logo -->
+                            <div class="header-logo col-md-4 col-12">
+                                <a routerLink="/" class="logo"><img src="./assets/img/logo.png" alt="logo"></a>
+                            </div>
+
+                            <!-- Account Menu -->
+                            <div class="account-menu col-md-4 col-12">
+                                <ul>
+                                    <li><a routerLink="/acount">My Account</a></li>
+                                    <li><i class="fa fa-sign-out" aria-hidden="true" (click)="Logout()"></i></li>
+                                    <li> <a routerLink="/user-profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+
+                                   
+                                   
+                                    <li><a routerLink="/wishlist">Wishlist</a></li>
+                                    <li><a href="#" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i><span class="num">{{count}}</span></a>
+                                        
+                                        <!-- Mini Cart -->
+                                        <div class="mini-cart-brief dropdown-menu text-left">
+                                            <!-- Cart Products -->
+                                            <div class="all-cart-product clearfix">
+                                                <div class="single-cart clearfix" *ngFor="let i of getAllCartProduct">
+                                                    <div class="cart-image">
+                                                        <a [routerLink]="'/product-details/'+i.pro_id"><img [src]="ds.baseurl + '/ProductImage/' + i.image"
+                                                            alt="Product" alt=""></a>
+                                                    </div>
+                                                    <div class="cart-info">
+                                                        <h5><a [routerLink]="'/product-details/'+i.pro_id">{{i.productName}}</a></h5>
+                                                        <p>{{i.proQuantity}} x ₹{{i.price}}</p>
+                                                        <span class="cart-delete" (click)="DeleteCartProduct(i.pro_id)" style="cursor: pointer;"><i class="fa fa-trash-o"></i></span> 
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <!-- Cart Total -->
+                                            <div class="cart-totals">
+                                                <h5>Total <span>₹{{total}}</span></h5>
+                                            </div>
+                                            <!-- Cart Button -->
+                                            <div class="cart-bottom  clearfix">
+                                                <a routerLink="/checkout">Check out</a>
+                                            </div>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div><!-- Header Top Wrapper End -->
+
+                </div>
+            </div>
+        </div>
+    </div><!-- Header Top End -->
+    
+    <!-- Header Bottom Start -->
+    <div class="header-bottom section">
+        <div class="container">
+            <div class="row">
+               
+                <!-- Header Bottom Wrapper Start -->
+                <div class="header-bottom-wrapper text-center col">
+
+                    <!-- Header Bottom Logo -->
+                    <div class="header-bottom-logo">
+                        <a routerLink="/" class="logo"><img src="./assets/img/logo.png" alt="logo"></a>
+                    </div>
+
+                    <!-- Main Menu -->
+                    <nav id="main-menu" class="main-menu">
+                        <ul>
+                            <li class="active"><a class="nav-link" routerLink="/" routerLinkActive="active">Home</a></li>
+                            <li><a class="nav-link" routerLink="/shop" routerLinkActive="active" >shop</a>
+                            </li>
+                            <li> <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a></li>
+                            <li><a class="getcolor">pages</a>
+                                <ul class="sub-menu">
+                                    <li><a routerLink="/cart">cart</a></li>
+                                    <li><a routerLink="/checkout">checkout</a></li>
+                                    <li><a routerLink="/wishlist">wishlist</a></li>
+                                </ul>
+                            </li>
+                            <li><a routerLink="/blog" routerLinkActive="active">blog</a>
+                            </li>
+                            <li><a routerLink="/contact" routerLinkActive="active">contact</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Header Search -->
+                    <div class="header-search">
+                        
+                        <!-- Search Toggle -->
+                        <button class="search-toggle" style="display: none;"> <i class="ion-ios-search-strong"></i></button>
+                        
+                        <!-- Search Form -->
+                        <div class="header-search-form">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button><i class="ion-ios-search-strong"></i></button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu section d-md-none">
+                        
+                    </div>
+
+                </div><!-- Header Bottom Wrapper End -->
+                
+            </div>
+        </div>
+    </div><!-- Header Bottom End -->
+    
+</div><!-- Header Section End -->

@@ -1,0 +1,102 @@
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+    
+    
+    
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>Account</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+  
+    <!-- Checkout Section Start-->
+    <div class="cart-section section pt-120 pb-90">
+        <div class="container">
+            <div class="row">
+               <div class="col-lg-3"></div>
+                <div class="col-lg-6 col-12 mb-30">
+                   
+                    <!-- Checkout Accordion Start -->
+                    <div id="checkout-accordion" class="panel-group">
+                       
+                        <!-- Checkout Method -->
+                        <div class="panel single-accordion">
+                           
+                            <!-- <a class="accordion-head" data-toggle="collapse" data-parent="#checkout-accordion" href="#checkout-method">1. checkout method</a> -->
+                            
+                           
+                            <mat-tab-group dynamicHeight>
+                                <mat-tab label="Register">
+                                    <form action="#" class="checkout-login-form">
+                                        <div class="row">
+                                            <div class="mb-3 mt-5">
+                                                <input type="text" class="form-control" name="name"  placeholder="Enter Name"   [(ngModel)]="name" >
+                                            </div>
+                                            <div class="mb-3">
+                                            <input type="email" name="email" class="form-control" placeholder="Enter Email-Id" [(ngModel)]="email">
+                                        </div>
+
+                                        <div class="mb-3 mt-2">
+                                            <input type="password" name="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password">
+                                            </div>
+                                            <div class="mb-3 mt-2">
+                                                <input type="password" name="Cpassword" class="form-control" placeholder="Enter Confirm Password" [(ngModel)]="Cpassword">
+                                                </div>
+                                            <button type="button" class="btn btn-success" (click)="Register()">Register</button>
+                                        </div>
+                                    </form>
+                                </mat-tab>
+
+                                <ng-template [ngIf]="!isLoggedIn">
+                                <mat-tab label="Login">
+                                    <form action="#" class="checkout-login-form">
+                                        <div class="row">
+                                        <div class="mb-3 mt-5">
+                                        <input type="email" class="form-control" name="loginemail" placeholder="Enter Email-Id" [(ngModel)]="loginemail">
+                                        </div>
+                                        <div class="mb-3 mt-2">
+                                            <input type="password" class="form-control" name="loginpassword" placeholder="Enter Password" [(ngModel)]="loginpassword">
+                                            </div>
+                                            <a class="anchbtn" routerLink="/forget-password" routerLinkActive="active">Forget password</a>
+
+                                            <button type="button" class="btn btn-success mt-3" (click)="Login()">Login</button>
+                                        </div>
+                                    </form>
+                                </mat-tab>
+                            </ng-template>
+                              </mat-tab-group>
+                           
+
+                        </div>
+                        
+                       
+                        
+                
+                        
+                    </div><!-- Checkout Accordion Start -->
+                    
+                </div>
+                <div class="col-lg-3"></div>
+                <!-- Order Details -->
+             
+                
+            </div>
+        </div>
+    </div><!-- Checkout Section End-->
+`
+       
+   
+    
+
+</div><!-- Main Wrapper End -->
+

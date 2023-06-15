@@ -1,0 +1,58 @@
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section"> 
+    <!-- Page Banner Section Start-->
+    <app-banner></app-banner>
+    
+       
+    <!-- About Section Start-->
+    <div class="about-section section pt-120 pb-90">
+        <div class="container">
+            <div class="row flex-row-reverse">
+                
+                <!-- About Image -->
+                <div class="about-image col-lg-6 col-12 mb-30">
+                    <a class="video-popup" href="https://www.youtube.com/watch?v=7e90gBu4pas"><img [src]="ds.baseurl + '/AboutusImage/' + GetSettingData.abt_image" alt="banner"></a>
+                </div>
+                
+                <!-- Mission Content -->
+                <div class="about-content col-lg-6 col-12 mb-30">
+                    <h2>{{GetSettingData.abt_title}}</h2>
+                    <p [innerHtml]="GetSettingData.abt_description"></p>
+                    <!-- <a routerLiNK="/shop" class="button">Shop Now</a> -->
+                    <a class="nav-link button" routerLink="/shop" routerLinkActive="active" >Shop Now</a>
+                </div>
+                
+            </div>
+        </div>
+    </div><!-- About Section End-->
+    
+    <!-- Team Section Start-->
+    <div class="team-section section pb-120">
+        <div class="container">
+           
+            <div class="row">
+                <div class="section-title text-center col mb-60">
+                    <h1>Our Team</h1>
+                </div>
+            </div>
+            
+            <div class="team-wrapper row">
+
+                <div class="single-team col-lg-3 col-md-6 col-12" *ngFor="let i of GetAllTeamData">
+                    <img [src]="ds.baseurl + '/TrainerImg/' +i.image" alt="team">
+                    <div class="content">
+                        <h4>{{i.name}}</h4>
+                        <span>{{i.speciality}}</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div><!-- Team Section End-->
+    
+ 
+
+
+    
+
+</div><!-- Main Wrapper End -->

@@ -1,0 +1,35 @@
+.col-lg-6 {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  
+  .payment {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .heading2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .row {
+    margin: 10px 0;
+  }
+  
+  input.loginIpt {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .errorTxt {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  

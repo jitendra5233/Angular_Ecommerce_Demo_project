@@ -1,0 +1,84 @@
+
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+    
+       
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>contact us</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+       
+    <!-- Contact Section Start-->
+    <div class="contact-section section bg-white pt-120 pb-200">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-xl-10 col-12 ml-auto mr-auto">
+                    
+                    <div class="contact-wrapper">
+                        <div class="row">
+
+                            <div class="contact-info col-lg-5 col-12">
+                                <h4 class="title">Contact Info</h4>
+                                <p>It is a long established fact that readewill be distracted by the readable content of a page when looking at ilayout.</p>
+                                <ul>
+                                    <li><span>Address:</span>{{GetSettingData.w_number}}</li>
+                                    <li><span>Email:</span>{{GetSettingData.cUsEmail}}</li>
+                                    <li><span>Phone:</span>{{GetSettingData.c_number}}</li>
+                                </ul>
+                                <div class="contact-social">
+                                    <ul style="display:flex;">
+                                        <li *ngFor="let i of GetSettingData.ameneties">
+                                            <a [href]="i.text" target="_blank"
+                                              ><i [class]="i.icon + ' fa-fw fa-solid'"></i
+                                            ></a>
+                                          </li>
+                                    </ul>
+                                    
+                                    <!-- <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest-p"></i></a> -->
+                                </div>
+                            </div>
+                            <div class="contact-form col-lg-7 col-12">
+                                <h4 class="title">Send Your Massage</h4>
+                                <form id="contact-form">
+                                    <input type="text" name="name" [(ngModel)]="name" placeholder="Your Name">
+                                    <input type="email" name="email" [(ngModel)]="email" placeholder="Your Email">
+                                    <input type="number" name="phone" [(ngModel)]="phone" placeholder="Your Phone">
+                                    <textarea name="message" [(ngModel)]="message" placeholder="Your Message"></textarea>
+                                    <input type="submit" value="Submit" (click)="ContactFormSubmit()">
+                                </form>
+                                <!-- <p class="form-messege"></p> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            </div>
+        </div>
+    </div><!-- Contact Section End-->
+    
+    <!-- Contact Map -->
+    <div id="contact-map"></div>
+    
+       
+   
+    
+
+</div><!-- Main Wrapper End -->
+

@@ -1,0 +1,88 @@
+
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+
+    
+       
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(./assets/img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>blog</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+       
+    <!-- Blog Section Start-->
+    <div class="blog-section section bg-gray pt-100 pb-60">
+        <div class="container">
+            <div class="row flex-row-reverse">
+                
+                <!-- Blog Wrapper -->
+                <div class="col-lg-12 col-12 mb-60">
+                    <div class="row">
+
+                        <!-- Blog Item Start-->
+                        <div class="blog-item col-md-4 col-12 mb-60" *ngFor="let i of getPaginatedItems()">
+
+                            <!-- Image -->
+                            <a [routerLink]="'/blog-details/'+i.id" class="image"><img  [src]="ds.baseurl + '/BlogImg/' + i.image"
+                                alt="blog"></a>
+
+                            <!-- Content -->
+                            <div class="content fix">
+
+                                <!-- Publish Date -->
+                                <span class="publish"><span>Published on:</span> {{i.fDate}}</span>
+
+                                <!-- Title -->
+                                <h4 class="title"><a [routerLink]="'/blog-details/'+i.id">{{i.title}}</a></h4>
+
+                                <!-- Decs -->
+                                <p>{{i.postContent}}</p>
+
+                                <!-- Read More Link --> 
+                                <a [routerLink]="'/blog-details/'+i.id" class="read-more">Read More</a>
+
+                            </div>
+
+                        </div><!-- Blog Item End-->
+
+
+                      
+                
+            <!-- Pagination Start -->
+            <div class="pagination-container">
+                <!-- Previous page button -->
+                <button (click)="previousPage()" [disabled]="currentPage === 1" class="pagination-button">Previous</button>
+                
+                <!-- Display the current page and total number of pages -->
+                <span class="pagination-info">Page {{ currentPage }} of {{ totalPages() }}</span>
+                
+                <!-- Next page button -->
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages()" class="pagination-button">Next</button>
+              </div><!-- Pagination End -->
+            
+                        
+                    </div>
+                </div>
+                
+                <!-- Sidebar Wrapper -->
+                
+            
+            </div>
+        </div>
+    </div><!-- Blog Section End-->
+    
+       
+
+    
+
+</div><!-- Main Wrapper End -->
